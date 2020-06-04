@@ -1,0 +1,20 @@
+using node to make a web server, http server library, build test use post man
+using active campaign to get requests
+webhooks uses url encoding
+gather more info
+update database
+
+
+use postman to for request for the server
+
+what apikey?
+
+So am I practicing on my own server? I'm sending a request to my own server, using postman.
+Then using a webhook to notify me when a request is made.
+using that information and putting into a database?
+
+or
+
+Am I requesting data from the API by using postman.
+Then using a webhook to notify me when a request is made.
+using that information and putting into a database
