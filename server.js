@@ -1,14 +1,23 @@
 const http = require('http');
 const mysql = require('mysql');
+const express = require('express');
+const app = express();
 
+app.get('/', function(req, res){
+  res.send("this is the home page");
+});
+app.listen(8901, "0.0.0.0" )
+/*
 var server = http.createServer(function (req, res) {   // 2 - creating server
 
-
-  if (req.url == '/') { //check the URL of the current request
+  //send to 98.179.61.174:8901/webhookdata
+  if (req.url == '/webhookdata') { //check the URL of the current request
       // set response header
+      console.log(req);
       res.writeHead(200, { 'Content-Type': 'text/html' });
       console.log("Incoming Req")
-      // set response content
+
+      //set response content
       res.write('<html><body><p>This is home Page.</p></body></html>');
       res.end();
 
@@ -17,13 +26,4 @@ var server = http.createServer(function (req, res) {   // 2 - creating server
 });
 
 console.log('Node.js web server at port 8901 is running..')
-server.listen(8901, "0.0.0.0"); //3 - listen for any incoming requests
-/*
-var con = mysql.createConnection({ // Establishes Connection To MySql Database
-host: "157.230.222.102",
-user: "dsypwqmujp",
-password: "n52XUjDsVT"
-});
-con.connect(function(err) {
-  if (err) throw err;
-}); */
+server.listen(8901); //3 - listen for any incoming requests*/
