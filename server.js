@@ -6,7 +6,8 @@ const app = express();
 app.get('/', function(req, res){
   res.send("this is the home page");
 });
-app.listen(8901, "0.0.0.0" )
+app.listen(8901);
+consoleg.log("Listening on port 8901");
 /*
 var server = http.createServer(function (req, res) {   // 2 - creating server
 
