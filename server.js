@@ -3,8 +3,8 @@ const mysql = require('mysql');
 const express = require('express');
 const app = express();
 const fs = require('fs');
-const bodyParser = require('body-parser');
-var urlEncodedParser = bodyParser.urlencoded({"extended": false});
+//const bodyParser = require('body-parser');
+//var urlEncodedParser = bodyParser.urlencoded({"extended": false});
 
 
 /*
