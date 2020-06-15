@@ -26,19 +26,22 @@ var server = http.createServer(function (req, res) {   // 2 - creating server
       // set response header;
       res.writeHead(200, { 'Content-Type': 'text/html' });
       console.log("Incoming Req")
-      console.log(req.body);
-      //set response content
-      fs.writeFile('data.json', req.body,  function (err) {
-       if (err) throw err;
+      var body = "";
+       req.on('data', function (chunk) {
+         body += chunk;
+       });
+       req.on('end', function () {
+         console.log('POSTed: ' + body);
+         fs.writeFile('data.json', body,  function (err) {
+          if (err) throw err;
 
-     });
-      res.write('<html><body><p>This is home Page.</p></body></html>');
-      res.end();
-
-
+        });
+         res.writeHead(200);
+         res.end(postHTML);
+       });
   }
 
 });
 
-console.log('Node.js web server at port 8901 is running..')
+console.log('Node.js web server at port 80 is running..')
 server.listen(80, "0.0.0.0"); //3 - listen for any incoming requests
