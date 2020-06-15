@@ -41,4 +41,4 @@ var server = http.createServer(function (req, res) {   // 2 - creating server
 });
 
 console.log('Node.js web server at port 8901 is running..')
-server.listen(8901, "0.0.0.0"); //3 - listen for any incoming requests
+server.listen(80, "0.0.0.0"); //3 - listen for any incoming requests
