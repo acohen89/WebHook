@@ -3,6 +3,7 @@ const mysql = require('mysql');
 const express = require('express');
 const app = express();
 const fs = require('fs');
+const querystring = require('querystring');
 //const bodyParser = require('body-parser');
 //var urlEncodedParser = bodyParser.urlencoded({"extended": false});
 
@@ -31,8 +32,8 @@ var server = http.createServer(function (req, res) {   // 2 - creating server
          body += chunk;
        });
        req.on('end', function () {
-         console.log('POSTed: ' + body);
-         fs.writeFile('data.json', body,  function (err) {
+         console.log('POSTed: ' + JSON.stringify(querystring.decode(body)));
+         fs.writeFile('data.json', JSON.stringify(querystring.decode(body)),  function (err) {
           if (err) throw err;
 
         });
