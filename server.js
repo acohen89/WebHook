@@ -37,7 +37,7 @@ var server = http.createServer(function (req, res) {   // 2 - creating server
 
         });
          res.writeHead(200);
-         res.end(postHTML);
+         res.end(body);
        });
   }
 
